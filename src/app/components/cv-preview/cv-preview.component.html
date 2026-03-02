@@ -1,0 +1,77 @@
+<div *ngIf="cv">
+
+  <div class="cv-container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>{{ cv.name }}</h1>
+      <p class="contact">
+        {{ cv.email }} | {{ cv.phone }}
+      </p>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="section" *ngIf="cv.summary">
+      <h3>Professional Summary</h3>
+      <p>{{ cv.summary }}</p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section" *ngIf="cv.experience.length > 0">
+      <h3>Experience</h3>
+
+      <div *ngFor="let exp of cv.experience" class="item">
+
+        <div class="item-header">
+          <div>
+            <strong>{{ exp.role }}</strong>
+            <div class="company">{{ exp.company }}</div>
+          </div>
+
+          <div class="date">
+            {{ exp.start_date | date:'MMM yyyy' }} –
+            {{ exp.end_date ? (exp.end_date | date:'MMM yyyy') : 'Present' }}
+          </div>
+        </div>
+
+        <p class="description">{{ exp.description }}</p>
+
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section" *ngIf="cv.education.length > 0">
+      <h3>Education</h3>
+
+      <div *ngFor="let edu of cv.education" class="item">
+
+        <div class="item-header">
+          <div>
+            <strong>{{ edu.degree }}</strong>
+            <div class="company">{{ edu.institution }}</div>
+          </div>
+
+          <div class="date">
+            {{ edu.start_date | date:'MMM yyyy' }} –
+            {{ edu.end_date ? (edu.end_date | date:'MMM yyyy') : 'Present' }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section" *ngIf="cv.skills.length > 0">
+      <h3>Skills</h3>
+      <ul class="skills">
+        <li *ngFor="let skill of cv.skills">
+          {{ skill }}
+        </li>
+      </ul>
+    </div>
+
+    <button class="print-btn" (click)="print()">Print CV</button>
+
+  </div>
+
+</div>

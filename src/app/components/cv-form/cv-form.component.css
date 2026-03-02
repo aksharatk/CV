@@ -1,0 +1,145 @@
+:host {
+  display: block;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #2f80ed;
+}
+
+/* Center Form */
+form {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Top Row (Name, Email, Phone) */
+.top-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.top-row input {
+  flex: 1;
+  max-width: 250px;
+}
+
+/* Summary Row */
+.summary-row {
+  display: flex;
+  justify-content: center;
+}
+
+.summary-row textarea {
+  width: 80%;
+  max-width: 800px;
+  min-height: 100px;
+}
+
+/* Section Headings */
+h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #333;
+  border-left: 4px solid #2f80ed;
+  padding-left: 8px;
+  font-size: 16px;
+}
+
+/* Inputs & Textareas */
+input,
+textarea {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  transition: 0.3s ease;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 2px rgba(47, 128, 237, 0.15);
+}
+
+/* Textarea resize */
+textarea {
+  resize: vertical;
+}
+
+/* Add Buttons */
+button[type="button"] {
+  align-self: flex-start;
+  background: #f1f5ff;
+  color: #2f80ed;
+  border: 1px solid #2f80ed;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="button"]:hover {
+  background: #2f80ed;
+  color: white;
+}
+
+/* Save Button */
+.save-btn {
+  margin-top: 20px;
+  background: #2f80ed;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #1c60c7;
+}
+
+/* Card style for Experience & Education */
+.card {
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Skills spacing */
+[formArrayName="skills"] input {
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-row input {
+    max-width: 100%;
+  }
+
+  .summary-row textarea {
+    width: 100%;
+  }
+}
